@@ -1,0 +1,60 @@
+Tipos de modelos de Datos:
+
+Modelo conceptual:
+describe las entidades principales y las relaciones.
+
+Ejemplo:
+
+ENTIDADES:
+* Cliente(Almacena informacion personaldel cliente)
+* Vehiculo (Asociado a un cliente, almacna dato del automovil)
+* Recordatorio (Almacena notificaciones sobre las fechas importantes)
+
+RELACIONES:
+Un cliente puede tener uno o varios vehiculos
+Un vehiculo tiene cero o mas recordatorios
+
+*****************************************************************************
+Modelo logico:
+define los atributos de cada entidad y sus relaciones
+
+Ejemplo:
+
+                Cliente     
+Campo           Tipos       Descripcion
+Id_cliente      INT(PK)     Identificador unico
+Nombre          VARCHAR(1)  Nombre Completo
+email           VARCHAR(1)  Correo Electronico
+Telefono        VARCHAR(1)  Numero de Contacto
+
+                Vehiculo
+Campo           Tipo        Descripcion
+Id_vehiculo     INT(PK)     Identificador unico
+Ie_cliente      INT(FK)     Relacion con cliente
+Placa           VARCHAR(1)  Placa del Vehiculo
+Marca           VARCHAR(1)  Marca del Vehiculo
+Modelo          INT         Año del vehiculo
+
+                                        Recordatorio
+Campo               Tipo                                        Descripcion
+Id_recordatorio     INT(PK)                                     Identificador unico
+Id_vehiculo         INT(FK)                                     Nombre Completo
+Tipo_recordator     ENUM('SOAT','TECNOMECANICO')                Correo Electronico
+Fecha_vencimien     DATE                                        Numero de Contacto
+Marca               VARCHAR(1)                                  Numero de Contacto
+Modelo              INT                                         Año del vehiculo
+Estado              ENUM('Pendiente','Enviado','Confirmado')    Estado del recordatorio
+
+
+*****************************************************************************
+Modelo fisico:
+representa la implementacion de una base de Datos
+
+
+
+*****************************************************************************
+
+# Inicializar un proyecto node.js
+npm init -y
+#Instalar librerias
+npm install express mysql2 dotenv cors body-parse
